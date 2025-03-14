@@ -20,7 +20,6 @@ let package = Package(
     targets: [
         .target(name: "SwiftLlama", 
                 dependencies: [
-                    .product(name: "llama", package: "llama.cpp")
                 ]),
         .testTarget(name: "SwiftLlamaTests", dependencies: ["SwiftLlama"]),
     ]
