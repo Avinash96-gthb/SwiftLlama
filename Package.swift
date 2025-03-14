@@ -14,12 +14,10 @@ let package = Package(
     products: [
         .library(name: "SwiftLlama", targets: ["SwiftLlama"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/ggerganov/llama.cpp.git", branch: "master")
-    ],
     targets: [
         .target(name: "SwiftLlama", 
                 dependencies: [
+                    .product(name: "llama", package: "llama.cpp")
                 ]),
         .testTarget(name: "SwiftLlamaTests", dependencies: ["SwiftLlama"]),
     ]
